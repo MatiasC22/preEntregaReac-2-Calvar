@@ -10,19 +10,19 @@ export default function NavBar(){
 
                 <Link to="/">Mi Tienda</Link>
             </div>
-            <ul className="navbar-menu">
 
-                <li className="navbar-item">
-                    <Link to="/category/vehiculos">Vehículos</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link to="/category/electronica">Electrónica</Link>
-                </li>
-                <li className="navbar-item">
-                    <Link to="/category/ropa">Ropa</Link>
-                </li>
-            </ul>
-            <CartWidget />
+            <button>
+            <Link to="/category/vehiculos">Vehículos</Link>
+            </button>
+
+            <button>
+            <Link to="/category/electronica">Electrónica</Link>
+            </button>
+
+            <button>
+            <Link to="/category/ropa">Ropa</Link>
+            </button>
+            
         </nav>
     );
 };

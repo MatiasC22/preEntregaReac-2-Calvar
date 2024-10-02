@@ -1,9 +1,8 @@
-import { useState } from 'react'
-
 import './App.css'
 import {BrowserRouter , Routes, Route} from "react-router-dom";
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 
 function App() {
@@ -12,9 +11,10 @@ function App() {
     <>
     <BrowserRouter>
       <NavBar />
-      <Routes>
-        
-        <Route exact path='/list'  element={<ItemListContainer greeting="¡Bienvenido a Mi Tienda!" />}></Route>
+      <Routes>        
+        <Route exact path="/" element={<ItemListContainer  />} />
+        <Route exact path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route exact path="/item/:itemId" element={<ItemDetailContainer />} />
       </Routes>
 
       

@@ -1,12 +1,22 @@
-import React from 'react';
-import './ItemListContainer.css';
+import React, { useEffect, useState } from 'react';
 
-const ItemListContainer = ({ greeting }) => {
+import { getProducts} from '../asyncMock.js'; 
+
+import ProductCard from './ProductCard';
+
+export default function ItemListContainer() {
+
+    const[products, setProducts]= useState([]);
+
+    useEffect(()=> {
+        getProducts.then(data => setProducts(data));
+    },[]);
+
   return (
-    <div className="item-list-container">
-      <h2>{greeting}</h2>
-    </div>
+    <>
+      <section>
+        {products.map(product => <ProductCard product={product}></ProductCard>)}
+      </section>
+    </>
   );
-};
-
-export default ItemListContainer;
+}
